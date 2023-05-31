@@ -1,14 +1,15 @@
 locals {
 	InstanceId = var.InstanceId
-	PrivateNetworkSecurityGroupName = "${local.UserLoginTag}-${local.Tag}-private-network-security-group"
-	PrivateSubnetName = "${local.UserLoginTag}-${local.Tag}-${local.InstanceId}-private-subnet"
+	Preamble = "${local.UserLoginTag}-${local.Tag}-${local.InstanceId}"
+	PrivateNetworkSecurityGroupName = "${local.Preamble}-private-nsg"
+	PrivateSubnetName = "${local.Preamble}-private-subnet"
 	PrivateSubnetPrefix = var.PrivateSubnetPrefix
-	PublicHttpSecurityRuleName = "${local.UserLoginTag}-${local.Tag}-web-rule"
-	PublicHttpsSecurityRuleName = "${local.UserLoginTag}-${local.Tag}-https-rule"
-	PublicNetworkSecurityGroupName = "${local.UserLoginTag}-${local.Tag}-network-security-group"
+	PublicHttpSecurityRuleName = "${local.Preamble}-http-rule"
+	PublicHttpsSecurityRuleName = "${local.Preamble}-https-rule"
+	PublicNetworkSecurityGroupName = "${local.Preamble}-public-nsg"
 	PublicSecurityRuleSourceIpPrefix = var.PublicSecurityRuleSourceIpPrefix
-	PublicSshSecurityRuleName = "${local.UserLoginTag}-${local.Tag}-ssh-rule"
-	PublicSubnetName = "${local.UserLoginTag}-${local.Tag}-${local.InstanceId}-public-subnet"
+	PublicSshSecurityRuleName = "${local.Preamble}-ssh-rule"
+	PublicSubnetName = "${local.Preamble}-public-subnet"
 	PublicSubnetPrefix = var.PublicSubnetPrefix
 	ResourceGroupLocation = var.ResourceGroupLocation
 	ResourceGroupName = var.ResourceGroupName
@@ -17,5 +18,5 @@ locals {
 	UserLoginTag = var.UserLoginTag
 	UserProjectTag = var.UserProjectTag
 	VnetAddressPrefix = var.VnetAddressPrefix
-	VnetName = "${local.UserLoginTag}-${local.Tag}-${local.InstanceId}"
+	VnetName = "${local.Preamble}-vnet"
 }
