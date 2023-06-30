@@ -2,6 +2,7 @@ output "PrivateNetworkSecurityGroup" {
 	description = "Network security group resource associated with the private subnet"
 	value = {
 		"id" : azurerm_network_security_group.PrivateNetworkSecurityGroup.id
+		"name" : azurerm_network_security_group.PrivateNetworkSecurityGroup.name
 	}
 }
 
@@ -16,6 +17,7 @@ output "PublicNetworkSecurityGroup" {
 	description = "Network security group resource associated with the public subnet"
 	value = {
 		"id" : azurerm_network_security_group.PublicNetworkSecurityGroup.id
+		"name" : azurerm_network_security_group.PublicNetworkSecurityGroup.name
 	}
 }
 
