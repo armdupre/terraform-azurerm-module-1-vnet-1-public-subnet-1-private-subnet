@@ -32,7 +32,7 @@ variable "ResourceGroupName" {
 }
 
 variable "Tag" {
-	default = "example"
+	default = "azure"
 	description = "App ID tag of application using the deployment"
 	type = string
 }
@@ -52,6 +52,12 @@ variable "UserLoginTag" {
 variable "UserProjectTag" {
 	default = "module"
 	description = "Project tag of user creating the deployment"
+	type = string
+}
+
+variable "Version" {
+	default = "demo"
+	description = "Versioning of the application using the deployment"
 	type = string
 }
 
