@@ -9,7 +9,7 @@ variable "PrivateSubnetPrefix" {
 	type = string
 }
 
-variable "PublicSecurityRuleSourceIpPrefix" {
+variable "PublicSecurityRuleSourceIpPrefixes" {
 	description = "List of IP Addresses /32 or IP CIDR ranges connecting inbound to App"
 	type = list(string)
 }
